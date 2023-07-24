@@ -1,0 +1,94 @@
+<%-include("includes /header")-%>
+  <link rel="stylesheet" href="/css/addUser.css">
+  <div class="container">
+    <div class="title">Update User Details</div>
+    <div class="content">
+      <form method="post" id="form">
+        <div class="user-details">
+          <div class="input-box">
+            <input type="hidden" name="id" value="<%=user._id%>">
+            <span class="details">Full Name</span>
+
+            <input type="text" id="name1" name="name" value="<%=user.name%>" placeholder="Enter your name">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" id="username" name="username" value="<%=user.username%>"
+              placeholder="Enter your username">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" name="email" value="<%=user.email%>" placeholder="Enter your email">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" name="phoneNumber" id="phoneNumber" value="<%=user.phoneNumber%>"
+              placeholder="Enter your number">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="password" id="password" value="<%=user.password%>"
+              placeholder="Enter your password">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" name="confirmPassword" id="confirmPassword" value="<%=user.password%>"
+              placeholder="Confirm your password">
+            <small></small>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1" value="Male" <%=user.gender=="Male" ?"checked":""%>>
+          <input type="radio" name="gender" id="dot-2" value="Female" <%=user.gender=="Female" ?"checked":""%>>
+          <input type="radio" name="gender" id="dot-3" value="PreferNotToSay" <%=user.gender=="PreferNotToSay"
+            ?"checked":""%>>
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+          <small id="errorGender"></small>
+        </div>
+
+        <div class="gender-details">
+          <span class="gender-title">Status</span><br>
+          <div class="status">
+            <input class="form-check-input" name="isActive" type="checkbox" value="true" id="flexCheckChecked"
+              <%=user.isActive==true ? "checked" : "unchecked" %> >
+
+            <label class="form-check-label" for="flexCheckChecked">
+              Active
+            </label>
+          </div>
+
+        </div>
+        <div class="button">
+          <input type="submit" value="Update User">
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/updateUser.js">import swal from 'sweetalert';</script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+
+  <%-include("includes /footer")-%>

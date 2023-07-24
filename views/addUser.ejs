@@ -1,0 +1,93 @@
+<%-include("includes /header")-%>
+  <link rel="stylesheet" href="/css/addUser.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form id="form">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" id="name1" name="name" placeholder="Enter your name">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" name="email" placeholder="Enter your email">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter your number">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" placeholder="Enter your password">
+            <small></small>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" id="confirmPassword" name="password" placeholder="Confirm your password">
+            <small></small>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" value="Male" id="dot-1">
+          <input type="radio" name="gender" value="Female" id="dot-2">
+          <input type="radio" name="gender" value="PreferNotToSay" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+          <small id="errorGender"></small>
+        </div>
+
+        <div class="gender-details">
+          <span class="gender-title">Status</span><br>
+          <div class="status">
+
+
+            <input class="form-check-input" id="isActive" name="isActive" type="checkbox" value="true"
+              id="flexCheckChecked" checked>
+
+            <label class="form-check-label" for="flexCheckChecked">
+              Active
+            </label>
+          </div>
+
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <script type="module" src="/js/addUser.js"> import swal from 'sweetalert';</script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <%-include("includes /footer")-%>

@@ -1,0 +1,55 @@
+<%-include("includes /header.ejs")-%>
+  <link rel="stylesheet" href="/css/userDetails.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <div class="header">
+    <h2 class="h1">User Details </h2>
+  </div>
+
+  <div class="container mt-4">
+    <input onclick="redirectToLogin()" type="button" value="New User" class="btn btn-outline-primary mb-3 ">
+    <br>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Sl. No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <%users.forEach((data,index)=>{%>
+            <tr>
+              <th scope="row">
+                <%=index+1%>
+              </th>
+              <td>
+                <%=data.name%>
+              </td>
+              <td>
+                <%=data.email%>
+              </td>
+              <td>
+                <%=data.isActive%>
+              </td>
+              <td class="actions ">
+                <a href="/updateuser?id=<%=data._id%>" class="btn btn-primary btn-sm fa fa-edit"></a>
+                <a class="delete btn btn-danger btn-sm fa fa-trash "></a>
+                <a href="#" class="btn btn-primary btn-sm fa fa-eye"></a>
+              </td>
+            </tr>
+            <%})%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="/js/userUpdate.js"> import swal from 'sweetalert' </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+
+  <%-include("includes /footer.ejs")-%>
