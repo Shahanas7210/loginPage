@@ -115,7 +115,7 @@ const form = document.getElementById("form");
           data: $("#form").serialize(),
           method: "post",
           success: function (response) {
-            swal("Good job!", "You clicked the button!", "success").then((result) => {
+            swal("Good job!", "User added successfully", "success").then((result) => {
                 window.location.reload();
             }).catch((err) => {
                 console.log("Press ok");

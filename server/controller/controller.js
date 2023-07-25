@@ -8,7 +8,19 @@ exports.create = (req, res) => {
         res.status(400).send({ message: "Content cant be empty" })
         return;
     }
-    
+    let isAdminVal;
+    if(req.body.isAdmin=="on"){
+          isAdminVal=true;
+    }else{
+           isAdminVal=false;
+    }
+
+    let isActiveVal;
+    if(req.body.isActive=="on"){
+        isActiveVal="true";
+    }else{
+        isActiveVal="false";
+    }
  
     const user = new userDB({
         name: req.body.name,
@@ -17,7 +29,8 @@ exports.create = (req, res) => {
         password: req.body.password,
         phoneNumber: req.body.phoneNumber,
         gender: req.body.gender,
-        isActive: req.body.isActive,
+        isActive:isActiveVal,
+        isAdmin:isAdminVal
     })
     user
     .save(user).then(data=>{
@@ -114,7 +127,7 @@ exports.delete = (req, res) => {
         if(!data){
             res.status(404).send({message:`Cannot delete the user ${id}. Maybe if is wrong or not found`});
         }else{
-              res.status(404)
+              res
               .send({message:"User deleted successfully"})
         }
     }).catch(ex=>{

@@ -15,14 +15,15 @@ dotenv.config({path:'config.env'})
 const bodyParser=require("body-parser")
 const port=process.env.port||3001;
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}))
 
 const router=require("./server/routes/router")
 
 
 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}))
+
 
 
 app.set("view engine","ejs")

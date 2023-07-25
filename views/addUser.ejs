@@ -1,4 +1,4 @@
-<%-include("includes /header")-%>
+<%-include("includes/header")-%>
   <link rel="stylesheet" href="/css/addUser.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <div class="container">
@@ -64,12 +64,18 @@
           <div class="status">
 
 
-            <input class="form-check-input" id="isActive" name="isActive" type="checkbox" value="true"
+            <input class="form-check-input" id="isActive" name="isActive" type="checkbox" 
               id="flexCheckChecked" checked>
 
             <label class="form-check-label" for="flexCheckChecked">
               Active
             </label>
+            <input class="form-check-input" id="isAdmin" name="isAdmin" type="checkbox" 
+            id="flexCheckChecked" >
+
+          <label class="form-check-label" for="flexCheckChecked">
+            Is Admin
+          </label>
           </div>
 
         </div>
@@ -90,4 +96,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
     integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <%-include("includes /footer")-%>
+  <%-include("includes/footer")-%>

@@ -35,6 +35,9 @@ const userSchema=new mongoose.Schema({
         default:Date.now()
 
 
+    },
+    isAdmin:{
+        typeof:String
     }
 
 })

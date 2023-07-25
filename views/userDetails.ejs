@@ -1,4 +1,4 @@
-<%-include("includes /header.ejs")-%>
+<%-include("includes/header.ejs")-%>
   <link rel="stylesheet" href="/css/userDetails.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -38,9 +38,10 @@
               <td>
                 <%=data.isActive%>
               </td>
-              <td class="actions ">
+              <td class="actions" id="<%=data._id%>">
                 <a href="/updateuser?id=<%=data._id%>" class="btn btn-primary btn-sm fa fa-edit"></a>
-                <a class="delete btn btn-danger btn-sm fa fa-trash "></a>
+                
+                <a class="delete btn btn-danger btn-sm fa fa-trash " onclick="deleteFunction(this)"></a>
                 <a href="#" class="btn btn-primary btn-sm fa fa-eye"></a>
               </td>
             </tr>
@@ -49,7 +50,11 @@
       </table>
     </div>
   </div>
-  <script src="/js/userUpdate.js"> import swal from 'sweetalert' </script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+  <script src="/js/userDetails.js"> import swal from 'sweetalert' </script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <%-include("includes /footer.ejs")-%>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <%-include("includes/footer.ejs")-%>

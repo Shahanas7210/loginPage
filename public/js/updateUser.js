@@ -117,13 +117,11 @@ const form = document.getElementById("form");
         
         var request={
             "url": `http://localhost:3001/api/users/${data.id}`,
-
-            
             "method":"put",
             "data":data
         }
         $.ajax(request).done(function(response){
-          swal("Good job!", "You clicked the button!", "success").then((result) => {
+          swal("Good job!", `User ${data.name} updated successfully`, "success").then((result) => {
             redirectToLogin()
         }).catch((err) => {
             console.log("Press ok");
