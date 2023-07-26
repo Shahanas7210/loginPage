@@ -21,11 +21,6 @@ app.use(bodyParser.urlencoded({extended:true}))
 const router=require("./server/routes/router")
 
 
-
-
-
-
-
 app.set("view engine","ejs")
 
 app.use(express.static('public'));
@@ -36,7 +31,7 @@ app.use("/",router)
 
 
 app.use("*",(req,res)=>{
-    res.send("Not found")
+    res.render("loginPage")
 })
 app.listen(port,()=>{
     console.log(`Server is running on ${port}`);

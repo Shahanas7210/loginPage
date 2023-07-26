@@ -3,20 +3,38 @@ const router = express.Router();
 const axios = require("axios");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
+const cookieParser=require("cookie-parser");
+const session=require("express-session");
+
+router.use(cookieParser());
+
 router.use(bodyParser.urlencoded({ extended: true }));
 let userDb = require("../model/schema");
 
 const controller = require("../controller/controller");
 
+router.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store');
+    next();
+});
 
+router.use(session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false, maxAge: 3600000 }
+}));
 
 
 router.get("/", (req, res) => {
+    
     res.render("loginPage", { title: "Login Page" });
 })
 
 router.post("/login", async (req, res) => {
+   
     let { email, password } = req.body;
+    req.session.userId=email;
     console.log(`email : ${email},password : ${password}`);
     try {
 
@@ -64,6 +82,10 @@ router.get("/userDetails", (req, res) => {
         });
 
 });
+
+router.get("/dashboard",(req,res)=>{
+    res.render("dashboard");
+})
 
 //API for register page
 router.post("/api/users", controller.create);
