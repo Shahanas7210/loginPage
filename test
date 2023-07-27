@@ -1,0 +1,20 @@
+ let { email, password } = req.body;
+        try {
+        const user = await userDb.findOne({ username: email }).exec();
+        if(user.username===email&&user.password===password){
+            req.session.userId=email;
+            email="";
+            password="";
+
+            if(req.session.userId){
+                res.render("dashboard",{successFull:msg,type:"success"})
+            }else{
+                res.render("loginPage",{successFull:"Please login again",type:"error"})
+            }
+        }else{
+             res.render("loginPage",{successFull:"Invalid username / password",type:"error"})
+        }
+        
+    } catch (ex) {
+       res.render("loginPage",{successFull:"User not found",type:"error"});  
+    }
