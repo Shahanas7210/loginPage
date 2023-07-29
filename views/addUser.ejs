@@ -7,32 +7,32 @@
       <form id="form">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Full Name</span>
+            <span class="details">Full Name  <label class="star">*</label> </span>
             <input type="text" id="name1" name="name" placeholder="Enter your name">
             <small></small>
           </div>
           <div class="input-box">
-            <span class="details">Username</span>
+            <span class="details">Username  <label class="star">*</label></span>
             <input type="text" id="username" name="username" placeholder="Enter your username">
             <small></small>
           </div>
           <div class="input-box">
-            <span class="details">Email</span>
+            <span class="details">Email  <label class="star">*</label></span>
             <input type="text" id="email" name="email" placeholder="Enter your email">
             <small></small>
           </div>
           <div class="input-box">
-            <span class="details">Phone Number</span>
+            <span class="details">Phone Number  <label class="star">*</label></span>
             <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter your number">
             <small></small>
           </div>
           <div class="input-box">
-            <span class="details">Password</span>
+            <span class="details">Password  <label class="star">*</label></span>
             <input type="password" id="password" placeholder="Enter your password">
             <small></small>
           </div>
           <div class="input-box">
-            <span class="details">Confirm Password</span>
+            <span class="details">Confirm Password  <label class="star">*</label></span>
             <input type="password" id="confirmPassword" name="password" placeholder="Confirm your password">
             <small></small>
           </div>
@@ -41,7 +41,7 @@
           <input type="radio" name="gender" value="Male" id="dot-1">
           <input type="radio" name="gender" value="Female" id="dot-2">
           <input type="radio" name="gender" value="PreferNotToSay" id="dot-3">
-          <span class="gender-title">Gender</span>
+          <span class="gender-title">Gender  <label class="star">*</label></span>
           <div class="category">
             <label for="dot-1">
               <span class="dot one"></span>
@@ -64,18 +64,23 @@
           <div class="status">
 
 
-            <input class="form-check-input" id="isActive" name="isActive" type="checkbox" 
-              id="flexCheckChecked" checked>
-
-            <label class="form-check-label" for="flexCheckChecked">
-              Active
-            </label>
-            <input class="form-check-input" id="isAdmin" name="isAdmin" type="checkbox" 
-            id="flexCheckChecked" >
-
-          <label class="form-check-label" for="flexCheckChecked">
-            Is Admin
-          </label>
+            <div class="inline-block-container">
+              <input class="form-check-input" id="isActive" name="isActive" type="checkbox" id="flexCheckChecked" checked>
+              <label class="form-check-label" for="flexCheckChecked">Active</label>
+            </div>
+            <div class="inline-block-container">
+              <label class="lbl"  for="UserRoll"> User Roll  <label class="star">*</label></label>
+              <select id="userRoll" name="userRoll"  class="form-select" id="UserRoll" name="userRoll">
+                <option value="-Select-" selected>-Select-</option>
+                <option value="Admin">Admin</option>
+                <option value="Staff">Staff</option>
+                <option value="Manager">Manager</option>
+              </select>
+            </div>
+            
+            
+            
+          
           </div>
 
         </div>

@@ -1,7 +1,5 @@
 
 
-
-
 const form = document.getElementById("form");
 
     function showError(input, message) {
@@ -38,6 +36,8 @@ const form = document.getElementById("form");
       const passwordInput = document.getElementById("password");
       const confirmPasswordInput = document.getElementById("confirmPassword");
       const genderInputs = document.querySelectorAll('input[name="gender"]');
+      const userRoll=document.getElementById("userRoll");
+
 
       let isValid = true;
 
@@ -99,6 +99,11 @@ const form = document.getElementById("form");
       } else {
         const genderError = document.getElementById("errorGender");
         genderError.innerText = "";
+      }
+
+      if(userRoll.value=="-Select-"){
+        alert("Please select user Roll");
+        isValid=false;
       }
 
       return isValid;
