@@ -155,4 +155,21 @@ input[type="number"]::-webkit-outer-spin-button {
   .status{
     margin-top: 18px;
   }
-  
+  .form-select{
+    width: 190px;
+    display: inline-block;
+    
+  }
+  .inline-block-container {
+    display: inline-block;
+    margin-right: 10px; /* Add some margin to separate the containers */
+  }
+  .lbl{
+    margin-left: 20px;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: large;
+  }
+  .star{
+    color: red;
+  }

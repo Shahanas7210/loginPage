@@ -33,12 +33,14 @@ const userSchema=new mongoose.Schema({
     },
     date:{
         type:Date,
+        
         default:Date.now()
 
 
     },
-    isAdmin:{
-        typeof:String
+    userRoll:{
+        type:"String",
+        required:true,
     }
 
 })

@@ -8,12 +8,7 @@ exports.create = (req, res) => {
         res.status(400).send({ message: "Content cant be empty" })
         return;
     }
-    let isAdminVal;
-    if(req.body.isAdmin=="on"){
-          isAdminVal=true;
-    }else{
-           isAdminVal=false;
-    }
+   
 
     let isActiveVal;
     if(req.body.isActive=="on"){
@@ -30,7 +25,7 @@ exports.create = (req, res) => {
         phoneNumber: req.body.phoneNumber,
         gender: req.body.gender,
         isActive:isActiveVal,
-        isAdmin:isAdminVal
+        userRoll:req.body.userRoll,
     })
     user
     .save(user).then(data=>{
