@@ -26,5 +26,98 @@
  .table tr:hover{
   background-color: #c9cbce8f;
  }
+ .inline-block-container {
+  display: inline-block;
+  margin-right: 10px; /* Add some margin to separate the containers */
+}
 
- 
+
+.btn-outline-primary{
+  width: 100%;
+}
+
+.margin {
+  margin-left: 70%; /* Adjust the margin as needed */
+}
+.search{
+  width: 40px;
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  .margin {
+    margin-left: 65%; /* Adjust the margin as needed */
+  }
+}
+@media (max-width: 1200px) {
+  .margin {
+    margin-left: 62%; /* Adjust the margin as needed */
+  }
+}
+@media (max-width: 1199px) {
+  .margin {
+    margin-left: 55%; /* Adjust the margin as needed */
+  }
+}
+@media (max-width: 1000px) {
+  .margin {
+    margin-left: 45%; /* Adjust the margin as needed */
+  }
+}
+@media(max-width:768px){
+  .table thead{
+    display: none;
+  }
+  .table, .table  tbody,.table tr,.table td{
+    display: block;
+    width: 100%;
+  }
+  .table tr{
+    margin-bottom: 15px ;
+  }
+  .table tbody tr td{
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  .table td:before{
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    /* width: 20%; */
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+  }
+  .table tr{
+    margin-top: 10px;
+    border:1px solid #0a0a0a;
+    padding: 10px;
+  }
+  .table tr:hover{
+    background-color: #0670d91e;
+   }
+   .margin {
+    margin-left: 25%; /* Adjust the margin as needed */
+  }
+}
+
+@media (max-width:523px) {
+  .margin {
+    margin-left: 0%;
+    display: block;
+    width: auto;
+    margin-bottom: 10px;
+  }
+  .inline-block-container{
+    width: 100%;
+
+  }
+  .search{
+    width: 100%;
+  }
+}

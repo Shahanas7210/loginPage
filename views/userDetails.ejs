@@ -8,10 +8,22 @@
   </div>
 
   <div class="container mt-4">
-    <input onclick="redirectToLogin()" type="button" value="New User" class="btn btn-outline-primary mb-3 ">
-    <br>
+    <div class="inline-block-container">
+      <input onclick="redirectToLogin()" type="button" value="New User" class="btn btn-outline-primary mb-3 ">
+    </div>
+    <div class="inline-block-container margin">
+      <input  type="text"  id="txt_search" class="form-control" name="search" placeholder="Search the name..." onkeyup="searchFunction()">
+      
+    </div>
+    
+    <a href="" class="btn btn-primary btn-sm search">
+      <i class="fa fa-search"></i>
+    </a>
+   
+    
+    
     <div class="table-responsive">
-      <table class="table">
+      <table class="table" id="myTable">
         <thead class="table-dark">
           <tr>
             <th scope="col">Sl. No.</th>
@@ -26,19 +38,19 @@
         <tbody>
           <%users.forEach((data,index)=>{%>
             <tr>
-              <th scope="row">
+              <td data-label="Sl No" scope="row">
                 <%=index+1%>
-              </th>
-              <td>
+              </td>
+              <td data-label="Name">
                 <%=data.name%>
               </td>
-              <td>
+              <td data-label="Email Id">
                 <%=data.email%>
               </td>
-              <td>
+              <td data-label="Status">
                 <%=data.isActive%>
               </td>
-              <td class="actions" id="<%=data._id%>">
+              <td data-label="Actions"  class="actions" id="<%=data._id%>">
                 <a href="/updateuser?id=<%=data._id%>" class="btn btn-primary btn-sm fa fa-edit"></a>
                 
                 <a class="delete btn btn-danger btn-sm fa fa-trash " onclick="deleteFunction(this)"></a>

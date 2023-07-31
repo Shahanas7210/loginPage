@@ -68,12 +68,22 @@
         <div class="gender-details">
           <span class="gender-title">Status</span><br>
           <div class="status">
-            <input class="form-check-input" name="isActive" type="checkbox" value="true" id="flexCheckChecked"
-              <%=user.isActive==true ? "checked" : "unchecked" %> >
-
-            <label class="form-check-label" for="flexCheckChecked">
-              Active
-            </label>
+           
+            <div class="inline-block-container">
+              <input class="form-check-input" name="isActive" type="checkbox" value="true" id="flexCheckChecked"
+              <%=user.isActive==true ? "checked" : "" %> >
+             
+              <label class="form-check-label" for="flexCheckChecked">Active</label>
+            </div>
+            <div class="inline-block-container">
+              <label class="lbl"  for="UserRoll"> User Roll  <label class="star">*</label></label>
+              <select id="userRoll"  name="userRoll"  class="form-select" id="UserRoll" name="userRoll">
+                <option value="-Select-" <%=user.userRoll=="-Select-" ?"selected":""%>>-Select-</option>
+                <option value="Admin" <%=user.userRoll=="Admin" ?"selected":""%>>Admin</option>
+                <option value="Staff" <%=user.userRoll=="Staff" ?"selected":""%>>Staff</option>
+                <option value="Manager" <%=user.userRoll=="Manager" ?"selected":""%>>Manager</option>
+              </select>
+            </div>
           </div>
 
         </div>

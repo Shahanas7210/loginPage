@@ -50,19 +50,26 @@ swal({
     
   }
 });
-
-  
-
-
-  // if(confirm("Do you wnt delete this record ?")){
-  //   $.ajax(request).done(function(response){
-  //     swal("Good job!", "You clicked the button!", "success").then((result) => {
-  //       location.reload();
-  //   }).catch((err) => {
-  //       console.log("Press ok");
-  //   });
-  //   })
-  // }
 }
 
 
+
+function searchFunction(){
+  const filter=document.getElementById("txt_search").value.toUpperCase();
+  const myTable=document.getElementById("myTable");
+  const tr=myTable.getElementsByTagName("tr");
+
+  for(var i=0;i<tr.length;i++){
+    let td=tr[i].getElementsByTagName("td")[1];
+    if(td){
+      let textValue=td.textContent||td.innerHTML;
+      if(textValue.toUpperCase().indexOf(filter)>-1){
+        tr[i].style.display="";
+      }else{
+        tr[i].style.display="none";
+      }
+    }
+         
+  }
+ 
+}

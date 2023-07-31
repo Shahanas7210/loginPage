@@ -99,16 +99,22 @@ const form = document.getElementById("form");
         const genderError = document.getElementById("errorGender");
         genderError.innerText = "";
       }
+      if(userRoll.value=="-Select-"){
+        alert("Please select user Roll");
+        isValid=false;
+      }
 
       return isValid;
     }
 
     form.addEventListener("submit", (e) => {
+      
       e.preventDefault();
       const isValid = validateForm();
 
       if (isValid) {
         var unindexed_array=$("form").serializeArray();
+        console.log("ddd"+unindexed_array);
         var data={};
         $.map(unindexed_array,function(n,i){
             data[n["name"]]=n['value']
