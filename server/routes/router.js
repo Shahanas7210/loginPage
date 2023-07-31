@@ -84,6 +84,7 @@ router.get("/userDetails", (req, res) => {
 
 router.get("/dashboard",(req,res)=>{
     if(req.session.userId){
+        
         res.render("dashboard",{successFull:"Login Successfully",type:"success"});
     }else{
         res.render('loginPage',{successFull:"Please login again",type:"info"});

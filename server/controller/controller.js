@@ -65,7 +65,6 @@ if(req.query.id){
     .then(user=>{
         res.send(user)
     }).catch((ex)=>{
-        // res.status(500).send({message:ex.message||"Error occur when the user data retriving"})
         res.render("addUser")
     })
 }
@@ -73,25 +72,6 @@ if(req.query.id){
 
 }
 
-//update a user
-// exports. update = (req, res) => {
-// if(!req.body){
-//    return  res.status(400)
-//     .send({message:"Data to update cant be emply"})
-// }
-// const id=req.params.id;
-// userDB.findByIdAndUpdate(id,req.body)
-// .then(data=>{
-//    if(!data){
-//     res.status(404).send({message:`Cannot update user eith ${id} or User not found !`})
-//    }else{
-//     res.send(data);
-//    }
-// }).catch((ex)=>{
-//     res.status(500).send({message:ex.message||"Error to update user"})
-// })
-
-// }
 
 exports.update = (req, res) => {
     if (!req.body) {
