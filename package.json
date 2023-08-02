@@ -1,7 +1,6 @@
 {
   "name": "firstproject",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"
@@ -25,5 +24,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shahanas7210/loginPage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shahanas7210/loginPage/issues"
+  },
+  "homepage": "https://github.com/Shahanas7210/loginPage#readme",
+  "description": ""
 }

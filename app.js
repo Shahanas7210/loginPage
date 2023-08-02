@@ -2,32 +2,43 @@ const express=require("express");
 const app=express();
 const dotenv=require("dotenv");
 const morgan=require("morgan"); 
-
-const connectDB=require("./server/database/connection.js")
-
-const userSchema=require("./server/model/schema");
-
-
+const bodyParser=require("body-parser");
+const cookieParser=require("cookie-parser");
+const session=require("express-session");
 
 dotenv.config({path:'config.env'})
 
+const userController=require("./server/controller/controller");
+const connectDB=require("./server/database/connection.js")
+const authRoutes=require("./server/routes/authRoutes");
+const controller = require("./server/controller/controller");
 
-const bodyParser=require("body-parser")
+
 const port=process.env.port||3001;
 
-app.use(bodyParser.json());
+//Middleware
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false, maxAge: 3600000 }
+}));
 
-const router=require("./server/routes/router")
-
+app.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store');
+    next();
+});
 
 app.set("view engine","ejs")
-
 app.use(express.static('public'));
 app.use(morgan("tiny"));
 connectDB();
 
-app.use("/",router)
+
+app.use("/",authRoutes)
+
 
 
 app.use("*",(req,res)=>{
