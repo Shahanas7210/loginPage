@@ -31,7 +31,7 @@ app.use("/",router)
 
 
 app.use("*",(req,res)=>{
-    res.render("loginPage")
+    res.send("Page not found")
 })
 app.listen(port,()=>{
     console.log(`Server is running on ${port}`);
