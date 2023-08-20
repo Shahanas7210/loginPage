@@ -1,4 +1,3 @@
-// const { default: swal } = require("sweetalert");
 
 
 
@@ -114,7 +113,6 @@ const form = document.getElementById("form");
 
       if (isValid) {
         var unindexed_array=$("form").serializeArray();
-        console.log("ddd"+unindexed_array);
         var data={};
         $.map(unindexed_array,function(n,i){
             data[n["name"]]=n['value']
